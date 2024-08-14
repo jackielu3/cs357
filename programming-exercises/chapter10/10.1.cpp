@@ -23,13 +23,17 @@ split and lisp are not anagrams
 
 using namespace std;
 
-bool isAnagram(const string& s1, const string& s2) {
+bool isAnagram(const string &s1, const string &s2)
+{
     string t1 = s1;
     string t2 = s2;
 
-    for (int i = 0; i < t1.size(); i++) {
-        if (t2[0] == t1[i]) {
-            if (t1.size() == 1) {
+    for (int i = 0; i < t1.size(); i++)
+    {
+        if (t2[0] == t1[i])
+        {
+            if (t1.size() == 1)
+            {
                 return true;
             }
 
@@ -43,7 +47,8 @@ bool isAnagram(const string& s1, const string& s2) {
     return false;
 }
 
-int main() {
+int main()
+{
     string s1, s2;
 
     cout << "Enter a string s1 : ";
@@ -52,9 +57,9 @@ int main() {
     cout << "Enter a string s2: ";
     cin >> s2;
 
-    if (isAnagram(s1, s2)) 
+    if (isAnagram(s1, s2))
         cout << s1 << " and " << s2 << " are anagrams" << endl;
-    else 
+    else
         cout << s1 << " and " << s2 << " are not anagrams" << endl;
 
     return 0;
