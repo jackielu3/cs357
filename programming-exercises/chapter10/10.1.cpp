@@ -33,7 +33,7 @@ bool isAnagram(const string& s1, const string& s2) {
                 return true;
             }
 
-            cout << "Being Removed: " << t2[0] << endl;
+            // cout << "Being Removed: " << t2[0] << endl;
 
             t1.erase(i, 1);
             t2.erase(0, 1);
