@@ -24,17 +24,32 @@ Enter a 3-by-4 two-dimensional array:
 The location of the largest element is 45 at (1, 2)
 */
 
-class Location {
-    public:
-    int row;
-    int colummn;
-    double maxValue;
-    
-    Location locateLargest(const double a[][COLUMN_SIZE]) {
-
-    }
-};
-
 const int ROW_SIZE = 3;
 const int COLUMN_SIZE = 4;
-Location locateLargest(const double a[][COLUMN_SIZE]);
+
+class Location {
+    public:
+    const int row = 3;
+    const int column = 4;
+    double maxValue;
+    
+    Location(int r = 0, int c = 0, double maxV = 0.0) : row(r), column(c), maxValue(maxV) {};
+};
+
+Location locateLargest(const double a[][COLUMN_SIZE], int ROW_SIZE) {
+    int maxRow = 0;
+    int maxColumn = 0;
+    double maxValue = a[0][0];
+
+    for (int i = 0; i < ROW_SIZE; i++) {
+        for (int j = 0; j < COLUMN_SIZE; j++) {
+            if (a[i][j] > maxValue) {
+                maxValue = a[i][j];
+                maxRow = i;
+                maxColumn = j;
+            }
+        }
+    }
+
+    return Location(maxRow, maxColumn, maxValue);
+}
